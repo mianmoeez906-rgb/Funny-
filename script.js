@@ -2,7 +2,7 @@
    CHANGE NAME HERE
 ================================= */
 
-const name = "ABDULLAH ";
+const name = "Ali ";
 
 
 /* =================================
