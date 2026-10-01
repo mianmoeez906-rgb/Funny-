@@ -1,0 +1,545 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   COMMON SCREEN
+========================= */
+
+.screen {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   FIRST SCREEN
+========================= */
+
+#firstScreen {
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffffff,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd0df,
+            #fff0f6,
+            #ffc4d8
+        );
+}
+
+
+.gift {
+
+    font-size: 90px;
+
+    animation:
+        floating 2s infinite ease-in-out;
+}
+
+
+#firstScreen h1 {
+
+    margin-top: 20px;
+
+    font-size: 45px;
+
+    color: #ff2768;
+}
+
+
+#firstScreen p {
+
+    margin-top: 10px;
+
+    font-size: 19px;
+
+    color: #555;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+#openBtn {
+
+    margin-top: 35px;
+
+    padding: 17px 42px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ff2868;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(255, 40, 104, 0.35);
+
+    transition: 0.3s;
+}
+
+
+#openBtn:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 15px 35px
+        rgba(255, 40, 104, 0.45);
+}
+
+
+#openBtn:active {
+
+    transform: scale(0.94);
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================
+   SECOND SCREEN
+========================= */
+
+#secondScreen {
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ffffff,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #ffb4cc,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #ffb2ca,
+            #ffe8f0
+        );
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.content h2 {
+
+    color: #444;
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+}
+
+
+#personName {
+
+    margin-top: 10px;
+
+    font-size: 65px;
+
+    color: #ff0755;
+
+    text-shadow:
+        0 5px 15px
+        rgba(255, 7, 85, 0.2);
+
+    animation:
+        namePop 1s ease;
+}
+
+
+.message {
+
+    margin-top: 15px;
+
+    max-width: 350px;
+
+    line-height: 1.5;
+
+    font-size: 18px;
+
+    color: #444;
+}
+
+
+/* =========================
+   GHOP GHOP
+========================= */
+
+.ghop {
+
+    margin-top: 30px;
+
+    font-size: 40px;
+
+    font-weight: 900;
+
+    color: #111;
+
+    animation:
+        ghopShake 0.3s infinite;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.musicBox {
+
+    margin-top: 15px;
+
+    width: 110px;
+
+    height: 200px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   HAND
+========================= */
+
+.hand {
+
+    position: absolute;
+
+    right: 30px;
+
+    bottom: 20px;
+
+    z-index: 10;
+
+    font-size: 110px;
+
+    transform-origin: bottom center;
+
+    animation:
+        handWave 1.1s infinite ease-in-out;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+
+    position: absolute;
+
+    font-size: 45px;
+
+    z-index: 2;
+
+    animation:
+        starFloat 2s infinite ease-in-out;
+}
+
+
+.stars1 {
+
+    top: 50px;
+
+    left: 30px;
+}
+
+
+.stars2 {
+
+    top: 100px;
+
+    right: 80px;
+
+    animation-delay: 0.5s;
+}
+
+
+.stars3 {
+
+    bottom: 120px;
+
+    left: 70px;
+
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes floating {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px);
+    }
+}
+
+
+@keyframes namePop {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.2)
+            rotate(-8deg);
+    }
+
+    60% {
+
+        transform:
+            scale(1.15)
+            rotate(3deg);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+
+@keyframes handWave {
+
+    0% {
+
+        transform:
+            rotate(-20deg)
+            translateY(0);
+    }
+
+    25% {
+
+        transform:
+            rotate(15deg)
+            translateY(-15px);
+    }
+
+    50% {
+
+        transform:
+            rotate(-15deg)
+            translateY(-25px);
+    }
+
+    75% {
+
+        transform:
+            rotate(15deg)
+            translateY(-15px);
+    }
+
+    100% {
+
+        transform:
+            rotate(-20deg)
+            translateY(0);
+    }
+}
+
+
+@keyframes ghopShake {
+
+    0% {
+
+        transform:
+            rotate(-4deg)
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            rotate(4deg)
+            scale(1.08);
+    }
+
+    100% {
+
+        transform:
+            rotate(-4deg)
+            scale(1);
+    }
+}
+
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0.7;
+    }
+
+    50% {
+
+        transform:
+            translateY(-20px)
+            rotate(20deg);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    #firstScreen h1 {
+
+        font-size: 35px;
+    }
+
+    .gift {
+
+        font-size: 75px;
+    }
+
+    #openBtn {
+
+        padding: 15px 32px;
+
+        font-size: 16px;
+    }
+
+    #personName {
+
+        font-size: 48px;
+    }
+
+    .content h2 {
+
+        font-size: 24px;
+    }
+
+    .message {
+
+        max-width: 280px;
+
+        font-size: 16px;
+    }
+
+    .ghop {
+
+        font-size: 30px;
+    }
+
+    .hand {
+
+        right: 5px;
+
+        bottom: 10px;
+
+        font-size: 70px;
+    }
+
+    .stars {
+
+        font-size: 30px;
+    }
+
+    .stars2 {
+
+        right: 25px;
+    }
+
+    .stars3 {
+
+        left: 25px;
+    }
+}
