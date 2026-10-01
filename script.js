@@ -1,27 +1,40 @@
-const openBtn = document.getElementById("openBtn");
-
-const firstScreen =
-    document.getElementById("firstScreen");
-
-const secondScreen =
-    document.getElementById("secondScreen");
-
-const personName =
-    document.getElementById("personName");
-
-
-// =========================
-// NAME
-// =========================
+/* =========================
+   CHANGE NAME HERE
+========================= */
 
 const name = "MOMINA";
 
 
-// =========================
-// OPEN BUTTON
-// =========================
+/* =========================
+   GET ELEMENTS
+========================= */
+
+const openBtn = document.getElementById("openBtn");
+
+const firstScreen = document.getElementById("firstScreen");
+
+const secondScreen = document.getElementById("secondScreen");
+
+const personName = document.getElementById("personName");
+
+const music = document.getElementById("music");
+
+
+/* =========================
+   SET NAME
+========================= */
+
+personName.textContent = name;
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
 
 openBtn.addEventListener("click", function () {
+
+    // Name set
+    personName.textContent = name;
 
     // First screen hide
     firstScreen.classList.add("hidden");
@@ -29,7 +42,15 @@ openBtn.addEventListener("click", function () {
     // Second screen show
     secondScreen.classList.remove("hidden");
 
-    // Name change
-    personName.textContent = name;
+    // Start music
+    music.currentTime = 0;
+
+    music.play()
+        .then(() => {
+            console.log("Music started successfully.");
+        })
+        .catch((error) => {
+            console.log("Music could not start:", error);
+        });
 
 });
