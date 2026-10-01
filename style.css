@@ -1,6 +1,6 @@
-/* =========================
+/* =================================
    RESET
-========================= */
+================================= */
 
 * {
     margin: 0;
@@ -8,73 +8,87 @@
     box-sizing: border-box;
 }
 
+
 html,
 body {
+
     width: 100%;
     height: 100%;
+
     overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 }
 
 
-/* =========================
-   SCREEN
-========================= */
+/* =================================
+   COMMON SCREEN
+================================= */
 
 .screen {
+
     width: 100%;
     height: 100vh;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 
     position: relative;
+
     overflow: hidden;
 }
 
 
-/* =========================
+/* =================================
    FIRST SCREEN
-========================= */
+================================= */
 
 #firstScreen {
 
     background:
 
         radial-gradient(
-            circle at 50% 20%,
-            rgba(20, 65, 120, 0.45),
+            circle at 50% 15%,
+            rgba(20, 70, 130, 0.45),
             transparent 35%
         ),
 
         radial-gradient(
             circle at 10% 90%,
-            rgba(8, 35, 75, 0.4),
+            rgba(10, 45, 90, 0.35),
             transparent 40%
         ),
 
         linear-gradient(
             135deg,
-            #010409,
+            #000205,
             #020b18,
-            #000205
+            #000308
         );
 
     color: white;
 
     transition:
+
         opacity 0.8s ease,
+
         transform 0.8s ease;
 }
 
 
-/* =========================
-   FIRST SCREEN GLOW
-========================= */
+/* =================================
+   FIRST SCREEN BLUE GLOW
+================================= */
 
 #firstScreen::before {
 
@@ -85,13 +99,16 @@ body {
     width: 450px;
     height: 450px;
 
-    background: rgba(15, 70, 140, 0.15);
+    background:
 
-    filter: blur(100px);
+        rgba(15, 80, 170, 0.12);
+
+    filter: blur(110px);
 
     border-radius: 50%;
 
     top: -180px;
+
     left: 50%;
 
     transform: translateX(-50%);
@@ -100,9 +117,9 @@ body {
 }
 
 
-/* =========================
+/* =================================
    HIDE FIRST SCREEN
-========================= */
+================================= */
 
 #firstScreen.hidden {
 
@@ -116,9 +133,9 @@ body {
 }
 
 
-/* =========================
+/* =================================
    ENVELOPE
-========================= */
+================================= */
 
 .envelope {
 
@@ -127,31 +144,40 @@ body {
     margin-bottom: 20px;
 
     filter:
+
         drop-shadow(
-            0 0 20px rgba(60, 140, 255, 0.55)
+            0 0 20px rgba(50, 140, 255, 0.6)
         );
 
     animation:
+
         envelopeFloat 2s ease-in-out infinite;
 }
 
 
-/* =========================
+/* =================================
    FIRST HEADING
-========================= */
+================================= */
 
 #firstScreen h1 {
 
-    font-size: clamp(35px, 8vw, 65px);
+    font-size:
+        clamp(35px, 8vw, 65px);
 
     margin-bottom: 12px;
 
     color: #f4f8ff;
 
     text-shadow:
-        0 0 15px rgba(70, 150, 255, 0.35);
+
+        0 0 15px
+        rgba(70, 150, 255, 0.4);
 }
 
+
+/* =================================
+   FIRST PARAGRAPH
+================================= */
 
 #firstScreen p {
 
@@ -159,30 +185,36 @@ body {
 
     margin-bottom: 35px;
 
-    color: #9eafc5;
+    color: #91a5bd;
 }
 
 
-/* =========================
+/* =================================
    OPEN BUTTON
-========================= */
+================================= */
 
 #openBtn {
 
-    border: 1px solid rgba(100, 170, 255, 0.45);
+    border:
 
-    padding: 16px 38px;
+        1px solid
+        rgba(90, 165, 255, 0.5);
+
+    padding:
+
+        16px 38px;
 
     border-radius: 50px;
 
     background:
+
         linear-gradient(
             135deg,
             #0b4f91,
-            #071d3b
+            #061b36
         );
 
-    color: #ffffff;
+    color: white;
 
     font-size: 17px;
 
@@ -191,34 +223,47 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 0 15px rgba(30, 120, 230, 0.3),
-        0 10px 30px rgba(0, 0, 0, 0.6);
+
+        0 0 18px
+        rgba(30, 120, 240, 0.3),
+
+        0 10px 35px
+        rgba(0, 0, 0, 0.7);
 
     transition:
+
         transform 0.25s ease,
+
         box-shadow 0.25s ease;
 }
 
 
 #openBtn:hover {
 
-    transform: translateY(-4px) scale(1.04);
+    transform:
+        translateY(-5px)
+        scale(1.05);
 
     box-shadow:
-        0 0 30px rgba(40, 140, 255, 0.55),
-        0 15px 35px rgba(0, 0, 0, 0.7);
+
+        0 0 35px
+        rgba(40, 145, 255, 0.65),
+
+        0 15px 40px
+        rgba(0, 0, 0, 0.8);
 }
 
 
 #openBtn:active {
 
-    transform: scale(0.95);
+    transform:
+        scale(0.94);
 }
 
 
-/* =========================
+/* =================================
    SECOND SCREEN
-========================= */
+================================= */
 
 #secondScreen {
 
@@ -226,33 +271,40 @@ body {
 
         radial-gradient(
             circle at 50% 25%,
-            rgba(12, 52, 105, 0.5),
+            rgba(12, 55, 115, 0.5),
             transparent 35%
         ),
 
         radial-gradient(
-            circle at 90% 90%,
-            rgba(8, 37, 80, 0.4),
+            circle at 10% 90%,
+            rgba(8, 40, 85, 0.35),
             transparent 40%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(20, 70, 130, 0.2),
+            transparent 35%
         ),
 
         linear-gradient(
             135deg,
-            #000204 0%,
-            #020b18 45%,
-            #000308 100%
+            #000204,
+            #020a16 45%,
+            #000308
         );
 
     color: white;
 
     animation:
+
         screenAppear 1.2s ease;
 }
 
 
-/* =========================
-   BLUE GLOW
-========================= */
+/* =================================
+   SECOND SCREEN GLOW
+================================= */
 
 #secondScreen::before {
 
@@ -264,24 +316,27 @@ body {
     height: 500px;
 
     background:
-        rgba(10, 80, 170, 0.12);
+
+        rgba(10, 80, 180, 0.12);
 
     filter: blur(120px);
 
     border-radius: 50%;
 
-    top: 10%;
+    top: 5%;
+
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     pointer-events: none;
 }
 
 
-/* =========================
+/* =================================
    CONTENT
-========================= */
+================================= */
 
 .content {
 
@@ -301,9 +356,9 @@ body {
 }
 
 
-/* =========================
+/* =================================
    SMALL TEXT
-========================= */
+================================= */
 
 .small-text {
 
@@ -313,23 +368,32 @@ body {
 
     margin-bottom: 10px;
 
-    color: #7fa9d8;
+    color: #82a9d6;
 
     text-shadow:
-        0 0 15px rgba(50, 130, 220, 0.6);
+
+        0 0 15px
+        rgba(50, 130, 230, 0.6);
 
     animation:
+
         fadeUp 1s ease;
 }
 
 
-/* =========================
+/* =================================
    NAME
-========================= */
+================================= */
 
 #personName {
 
-    font-size: clamp(55px, 13vw, 110px);
+    font-size:
+
+        clamp(
+            55px,
+            13vw,
+            110px
+        );
 
     font-weight: 900;
 
@@ -344,35 +408,46 @@ body {
         linear-gradient(
             90deg,
             #ffffff,
-            #65a9ff,
-            #d8ecff,
-            #3d8cff,
+            #4f9cff,
+            #d9edff,
+            #3c8fff,
             #ffffff
         );
 
     background-size: 300% auto;
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     filter:
+
         drop-shadow(
-            0 0 18px rgba(60, 140, 255, 0.5)
+            0 0 20px
+            rgba(50, 140, 255, 0.5)
         );
 
     animation:
+
         nameAppear 1.2s ease,
+
         gradientMove 5s linear infinite;
 }
 
 
-/* =========================
+/* =================================
    MESSAGE
-========================= */
+================================= */
 
 .message {
 
-    font-size: clamp(16px, 4vw, 21px);
+    font-size:
+
+        clamp(
+            16px,
+            4vw,
+            21px
+        );
 
     max-width: 600px;
 
@@ -380,44 +455,58 @@ body {
 
     margin-bottom: 25px;
 
-    color: #9eb2c9;
+    color: #9cafc5;
 
     animation:
+
         fadeUp 1.4s ease;
 }
 
 
-/* =========================
+/* =================================
    GHOP GHOP
-========================= */
+================================= */
 
 .ghop-text {
 
-    font-size: clamp(28px, 7vw, 55px);
+    font-size:
+
+        clamp(
+            28px,
+            7vw,
+            55px
+        );
 
     font-weight: 900;
 
     letter-spacing: 3px;
 
-    color: #eaf4ff;
+    color: #eaf5ff;
 
     text-shadow:
 
-        0 0 8px rgba(65, 150, 255, 0.9),
+        0 0 8px
+        rgba(70, 155, 255, 1),
 
-        0 0 20px rgba(35, 110, 220, 0.8),
+        0 0 20px
+        rgba(35, 115, 225, 0.9),
 
-        0 0 40px rgba(20, 80, 180, 0.6);
+        0 0 40px
+        rgba(20, 80, 180, 0.7);
 
     animation:
+
         ghopPop 1s ease,
-        ghopShake 0.5s ease-in-out 1s infinite alternate;
+
+        ghopShake
+        0.5s ease-in-out
+        1s infinite alternate;
 }
 
 
-/* =========================
+/* =================================
    HAND
-========================= */
+================================= */
 
 .hand-container {
 
@@ -430,8 +519,17 @@ body {
     z-index: 20;
 
     animation:
-        handEnter 1.5s cubic-bezier(.17,.67,.32,1.3) forwards,
-        handMove 2s ease-in-out 1.5s infinite;
+
+        handEnter
+        1.5s
+        cubic-bezier(.17,.67,.32,1.3)
+        forwards,
+
+        handMove
+        2s
+        ease-in-out
+        1.5s
+        infinite;
 }
 
 
@@ -440,80 +538,123 @@ body {
     font-size: 150px;
 
     filter:
+
         drop-shadow(
-            0 0 15px rgba(60, 150, 255, 0.3)
+            0 0 15px
+            rgba(70, 150, 255, 0.4)
         );
 }
 
 
-/* =========================
+/* =================================
    STARS
-========================= */
+================================= */
 
 .star {
 
     position: absolute;
 
-    color: #8ec5ff;
+    color: #83c0ff;
 
     opacity: 0.7;
 
     text-shadow:
-        0 0 12px #358cff;
+
+        0 0 12px
+        #358cff;
 
     animation:
-        starFloat 4s ease-in-out infinite;
+
+        starFloat
+        4s
+        ease-in-out
+        infinite;
+
+    z-index: 2;
 }
 
 
 .star1 {
+
     top: 12%;
     left: 12%;
+
     font-size: 25px;
 }
 
+
 .star2 {
+
     top: 20%;
     right: 15%;
+
     font-size: 35px;
+
     animation-delay: 1s;
 }
 
+
 .star3 {
+
     bottom: 20%;
     right: 12%;
+
     font-size: 25px;
+
     animation-delay: 2s;
 }
 
+
 .star4 {
+
     bottom: 30%;
     left: 18%;
+
     font-size: 30px;
+
     animation-delay: 1.5s;
 }
 
+
 .star5 {
+
     top: 40%;
     right: 7%;
+
     font-size: 18px;
+
     animation-delay: 2.5s;
 }
 
 
-/* =========================
+.star6 {
+
+    top: 65%;
+    left: 8%;
+
+    font-size: 20px;
+
+    animation-delay: 3s;
+}
+
+
+/* =================================
    ANIMATIONS
-========================= */
+================================= */
 
 @keyframes envelopeFloat {
 
     0%,
     100% {
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-15px);
+
+        transform:
+            translateY(-15px);
     }
 }
 
@@ -521,13 +662,19 @@ body {
 @keyframes screenAppear {
 
     from {
+
         opacity: 0;
-        transform: scale(1.08);
+
+        transform:
+            scale(1.08);
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 }
 
@@ -535,13 +682,19 @@ body {
 @keyframes fadeUp {
 
     from {
+
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+            translateY(30px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -549,13 +702,19 @@ body {
 @keyframes nameAppear {
 
     from {
+
         opacity: 0;
-        transform: scale(0.4);
+
+        transform:
+            scale(0.4);
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 }
 
@@ -563,11 +722,15 @@ body {
 @keyframes gradientMove {
 
     0% {
-        background-position: 0% center;
+
+        background-position:
+            0% center;
     }
 
     100% {
-        background-position: 300% center;
+
+        background-position:
+            300% center;
     }
 }
 
@@ -575,17 +738,25 @@ body {
 @keyframes ghopPop {
 
     0% {
+
         opacity: 0;
-        transform: scale(0);
+
+        transform:
+            scale(0);
     }
 
     70% {
-        transform: scale(1.2);
+
+        transform:
+            scale(1.2);
     }
 
     100% {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 }
 
@@ -593,11 +764,15 @@ body {
 @keyframes ghopShake {
 
     from {
-        transform: rotate(-2deg);
+
+        transform:
+            rotate(-2deg);
     }
 
     to {
-        transform: rotate(2deg);
+
+        transform:
+            rotate(2deg);
     }
 }
 
@@ -605,13 +780,19 @@ body {
 @keyframes handEnter {
 
     from {
+
         left: -180px;
-        transform: rotate(-25deg);
+
+        transform:
+            rotate(-25deg);
     }
 
     to {
+
         left: 5%;
-        transform: rotate(15deg);
+
+        transform:
+            rotate(15deg);
     }
 }
 
@@ -620,11 +801,17 @@ body {
 
     0%,
     100% {
-        transform: rotate(15deg) translateY(0);
+
+        transform:
+            rotate(15deg)
+            translateY(0);
     }
 
     50% {
-        transform: rotate(8deg) translateY(-18px);
+
+        transform:
+            rotate(8deg)
+            translateY(-18px);
     }
 }
 
@@ -633,55 +820,80 @@ body {
 
     0%,
     100% {
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
         opacity: 0.4;
     }
 
     50% {
-        transform: translateY(-20px);
+
+        transform:
+            translateY(-20px);
+
         opacity: 1;
     }
 }
 
 
-/* =========================
+/* =================================
    MOBILE
-========================= */
+================================= */
 
 @media (max-width: 600px) {
 
     #firstScreen h1 {
+
         font-size: 42px;
     }
 
+
     #firstScreen p {
+
         font-size: 16px;
     }
 
+
     #openBtn {
-        padding: 14px 30px;
+
+        padding:
+            14px 30px;
+
         font-size: 15px;
     }
 
+
     .hand {
+
         font-size: 95px;
     }
 
+
     .hand-container {
+
         bottom: 12%;
     }
 
+
     #personName {
+
         font-size: 52px;
+
         letter-spacing: 2px;
     }
 
+
     .message {
+
         max-width: 90%;
+
         font-size: 16px;
     }
 
+
     .ghop-text {
+
         font-size: 30px;
     }
 
