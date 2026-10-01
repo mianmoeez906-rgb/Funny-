@@ -1,56 +1,83 @@
-/* =========================
-   NAME
-========================= */
+/* =================================
+   CHANGE NAME HERE
+================================= */
 
 const name = "MOMINA";
 
 
-/* =========================
-   ELEMENTS
-========================= */
+/* =================================
+   GET ELEMENTS
+================================= */
 
-const openBtn = document.getElementById("openBtn");
-const firstScreen = document.getElementById("firstScreen");
-const secondScreen = document.getElementById("secondScreen");
-const personName = document.getElementById("personName");
-const music = document.getElementById("music");
+const openBtn =
+    document.getElementById("openBtn");
+
+const firstScreen =
+    document.getElementById("firstScreen");
+
+const secondScreen =
+    document.getElementById("secondScreen");
+
+const personName =
+    document.getElementById("personName");
+
+const music =
+    document.getElementById("music");
 
 
-/* =========================
-   NAME
-========================= */
+/* =================================
+   SET NAME
+================================= */
 
 personName.textContent = name;
 
 
-/* =========================
-   OPEN
-========================= */
+/* =================================
+   OPEN BUTTON
+================================= */
 
-openBtn.addEventListener("click", async function () {
+openBtn.addEventListener(
+    "click",
+    async function () {
 
-    // Screen change
-    firstScreen.classList.add("hidden");
-    secondScreen.classList.remove("hidden");
+        /* Show second screen */
 
-    // Name
-    personName.textContent = name;
+        firstScreen.classList.add("hidden");
 
-    // Music
-    try {
+        secondScreen.classList.remove("hidden");
 
-        music.currentTime = 0;
 
-        music.volume = 1;
+        /* Set name */
 
-        await music.play();
+        personName.textContent = name;
 
-        console.log("Music started!");
 
-    } catch (error) {
+        /* =================================
+           START MUSIC
+        ================================== */
 
-        console.log("Music error:", error);
+        try {
+
+            music.currentTime = 0;
+
+            music.volume = 1;
+
+            await music.play();
+
+            console.log(
+                "GopGop music started successfully!"
+            );
+
+        }
+
+        catch (error) {
+
+            console.log(
+                "Music could not start:",
+                error
+            );
+
+        }
 
     }
-
-});
+);
