@@ -1,5 +1,5 @@
 /* =========================
-   BASIC RESET
+   RESET
 ========================= */
 
 * {
@@ -18,7 +18,7 @@ body {
 
 
 /* =========================
-   COMMON SCREEN
+   SCREEN
 ========================= */
 
 .screen {
@@ -42,22 +42,26 @@ body {
 ========================= */
 
 #firstScreen {
+
     background:
+
         radial-gradient(
-            circle at 20% 20%,
-            rgba(157, 78, 221, 0.35),
+            circle at 50% 20%,
+            rgba(20, 65, 120, 0.45),
             transparent 35%
         ),
+
         radial-gradient(
-            circle at 80% 80%,
-            rgba(255, 0, 110, 0.25),
-            transparent 35%
+            circle at 10% 90%,
+            rgba(8, 35, 75, 0.4),
+            transparent 40%
         ),
+
         linear-gradient(
             135deg,
-            #05000d,
-            #10001f 45%,
-            #05000d
+            #010409,
+            #020b18,
+            #000205
         );
 
     color: white;
@@ -68,35 +72,46 @@ body {
 }
 
 
-/* Dark glow */
+/* =========================
+   FIRST SCREEN GLOW
+========================= */
 
 #firstScreen::before {
+
     content: "";
 
     position: absolute;
 
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
 
-    background: rgba(155, 0, 255, 0.15);
+    background: rgba(15, 70, 140, 0.15);
 
     filter: blur(100px);
 
     border-radius: 50%;
 
-    top: -150px;
-    left: -150px;
+    top: -180px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
 }
 
 
 /* =========================
-   FIRST SCREEN HIDDEN
+   HIDE FIRST SCREEN
 ========================= */
 
 #firstScreen.hidden {
+
     opacity: 0;
-    transform: scale(1.2);
+
+    transform: scale(1.15);
+
     pointer-events: none;
+
     position: absolute;
 }
 
@@ -106,13 +121,14 @@ body {
 ========================= */
 
 .envelope {
+
     font-size: 85px;
 
     margin-bottom: 20px;
 
     filter:
         drop-shadow(
-            0 0 20px rgba(255, 0, 150, 0.6)
+            0 0 20px rgba(60, 140, 255, 0.55)
         );
 
     animation:
@@ -125,34 +141,25 @@ body {
 ========================= */
 
 #firstScreen h1 {
+
     font-size: clamp(35px, 8vw, 65px);
 
     margin-bottom: 12px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #ff4fd8,
-            #9d6cff
-        );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #f4f8ff;
 
     text-shadow:
-        0 0 25px rgba(255, 0, 180, 0.25);
+        0 0 15px rgba(70, 150, 255, 0.35);
 }
 
 
 #firstScreen p {
+
     font-size: 18px;
 
     margin-bottom: 35px;
 
-    color: #cfc5dc;
-
-    opacity: 0.95;
+    color: #9eafc5;
 }
 
 
@@ -162,7 +169,7 @@ body {
 
 #openBtn {
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(100, 170, 255, 0.45);
 
     padding: 16px 38px;
 
@@ -171,11 +178,11 @@ body {
     background:
         linear-gradient(
             135deg,
-            #ff1493,
-            #9d4edd
+            #0b4f91,
+            #071d3b
         );
 
-    color: white;
+    color: #ffffff;
 
     font-size: 17px;
 
@@ -184,8 +191,8 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 0 20px rgba(255, 20, 147, 0.35),
-        0 10px 35px rgba(0, 0, 0, 0.5);
+        0 0 15px rgba(30, 120, 230, 0.3),
+        0 10px 30px rgba(0, 0, 0, 0.6);
 
     transition:
         transform 0.25s ease,
@@ -195,16 +202,17 @@ body {
 
 #openBtn:hover {
 
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-4px) scale(1.04);
 
     box-shadow:
-        0 0 35px rgba(255, 20, 147, 0.65),
-        0 15px 40px rgba(0, 0, 0, 0.6);
+        0 0 30px rgba(40, 140, 255, 0.55),
+        0 15px 35px rgba(0, 0, 0, 0.7);
 }
 
 
 #openBtn:active {
-    transform: scale(0.94);
+
+    transform: scale(0.95);
 }
 
 
@@ -217,34 +225,57 @@ body {
     background:
 
         radial-gradient(
-            circle at 50% 20%,
-            rgba(157, 78, 221, 0.25),
+            circle at 50% 25%,
+            rgba(12, 52, 105, 0.5),
             transparent 35%
         ),
 
         radial-gradient(
-            circle at 10% 90%,
-            rgba(255, 20, 147, 0.18),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 90% 70%,
-            rgba(0, 200, 255, 0.12),
-            transparent 30%
+            circle at 90% 90%,
+            rgba(8, 37, 80, 0.4),
+            transparent 40%
         ),
 
         linear-gradient(
             135deg,
-            #030008,
-            #0c0018 45%,
-            #05000c
+            #000204 0%,
+            #020b18 45%,
+            #000308 100%
         );
 
     color: white;
 
     animation:
         screenAppear 1.2s ease;
+}
+
+
+/* =========================
+   BLUE GLOW
+========================= */
+
+#secondScreen::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        rgba(10, 80, 170, 0.12);
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    top: 10%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
 }
 
 
@@ -282,10 +313,10 @@ body {
 
     margin-bottom: 10px;
 
-    color: #cbb6e8;
+    color: #7fa9d8;
 
     text-shadow:
-        0 0 15px rgba(157, 78, 221, 0.6);
+        0 0 15px rgba(50, 130, 220, 0.6);
 
     animation:
         fadeUp 1s ease;
@@ -309,12 +340,14 @@ body {
     margin-bottom: 15px;
 
     background:
+
         linear-gradient(
             90deg,
-            #ff2bb5,
-            #b967ff,
-            #65d9ff,
-            #ff2bb5
+            #ffffff,
+            #65a9ff,
+            #d8ecff,
+            #3d8cff,
+            #ffffff
         );
 
     background-size: 300% auto;
@@ -324,7 +357,7 @@ body {
 
     filter:
         drop-shadow(
-            0 0 20px rgba(255, 0, 180, 0.35)
+            0 0 18px rgba(60, 140, 255, 0.5)
         );
 
     animation:
@@ -347,7 +380,7 @@ body {
 
     margin-bottom: 25px;
 
-    color: #d8cee2;
+    color: #9eb2c9;
 
     animation:
         fadeUp 1.4s ease;
@@ -366,15 +399,15 @@ body {
 
     letter-spacing: 3px;
 
-    color: #ffffff;
+    color: #eaf4ff;
 
     text-shadow:
 
-        0 0 8px #ff1493,
+        0 0 8px rgba(65, 150, 255, 0.9),
 
-        0 0 20px #ff1493,
+        0 0 20px rgba(35, 110, 220, 0.8),
 
-        0 0 40px rgba(157, 78, 221, 0.8);
+        0 0 40px rgba(20, 80, 180, 0.6);
 
     animation:
         ghopPop 1s ease,
@@ -408,61 +441,63 @@ body {
 
     filter:
         drop-shadow(
-            0 0 15px rgba(255, 255, 255, 0.2)
+            0 0 15px rgba(60, 150, 255, 0.3)
         );
 }
 
 
 /* =========================
-   FLOATING HEARTS
+   STARS
 ========================= */
 
-.floating-heart {
+.star {
 
     position: absolute;
 
-    z-index: 2;
+    color: #8ec5ff;
 
-    opacity: 0.8;
+    opacity: 0.7;
 
-    filter:
-        drop-shadow(
-            0 0 10px rgba(255, 20, 147, 0.7)
-        );
+    text-shadow:
+        0 0 12px #358cff;
 
     animation:
-        heartFloat 5s ease-in-out infinite;
+        starFloat 4s ease-in-out infinite;
 }
 
 
-.heart1 {
-    top: 10%;
+.star1 {
+    top: 12%;
     left: 12%;
-    font-size: 30px;
+    font-size: 25px;
 }
 
-
-.heart2 {
+.star2 {
     top: 20%;
-    right: 12%;
-    font-size: 40px;
+    right: 15%;
+    font-size: 35px;
     animation-delay: 1s;
 }
 
-
-.heart3 {
-    bottom: 18%;
-    right: 18%;
-    font-size: 28px;
+.star3 {
+    bottom: 20%;
+    right: 12%;
+    font-size: 25px;
     animation-delay: 2s;
 }
 
-
-.heart4 {
-    bottom: 25%;
-    left: 15%;
-    font-size: 35px;
+.star4 {
+    bottom: 30%;
+    left: 18%;
+    font-size: 30px;
     animation-delay: 1.5s;
+}
+
+.star5 {
+    top: 40%;
+    right: 7%;
+    font-size: 18px;
+    animation-delay: 2.5s;
 }
 
 
@@ -594,15 +629,17 @@ body {
 }
 
 
-@keyframes heartFloat {
+@keyframes starFloat {
 
     0%,
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0);
+        opacity: 0.4;
     }
 
     50% {
-        transform: translateY(-30px) rotate(10deg);
+        transform: translateY(-20px);
+        opacity: 1;
     }
 }
 
