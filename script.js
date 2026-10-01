@@ -1,56 +1,56 @@
 /* =========================
-   CHANGE NAME HERE
+   NAME
 ========================= */
 
 const name = "MOMINA";
 
 
 /* =========================
-   GET ELEMENTS
+   ELEMENTS
 ========================= */
 
 const openBtn = document.getElementById("openBtn");
-
 const firstScreen = document.getElementById("firstScreen");
-
 const secondScreen = document.getElementById("secondScreen");
-
 const personName = document.getElementById("personName");
-
 const music = document.getElementById("music");
 
 
 /* =========================
-   SET NAME
+   NAME
 ========================= */
 
 personName.textContent = name;
 
 
 /* =========================
-   OPEN BUTTON
+   OPEN
 ========================= */
 
-openBtn.addEventListener("click", function () {
+openBtn.addEventListener("click", async function () {
 
-    // Name set
-    personName.textContent = name;
-
-    // First screen hide
+    // Screen change
     firstScreen.classList.add("hidden");
-
-    // Second screen show
     secondScreen.classList.remove("hidden");
 
-    // Start music
-    music.currentTime = 0;
+    // Name
+    personName.textContent = name;
 
-    music.play()
-        .then(() => {
-            console.log("Music started successfully.");
-        })
-        .catch((error) => {
-            console.log("Music could not start:", error);
-        });
+    // Music
+    try {
+
+        music.currentTime = 0;
+
+        music.volume = 1;
+
+        await music.play();
+
+        console.log("Music started!");
+
+    } catch (error) {
+
+        console.log("Music error:", error);
+
+    }
 
 });
