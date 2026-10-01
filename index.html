@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Open This ❤️</title>
+    <title>For You ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,10 +14,9 @@
     <!-- =========================
          FIRST SCREEN
     ========================== -->
+    <div id="firstScreen" class="screen">
 
-    <section id="firstScreen" class="screen">
-
-        <div class="gift">💌</div>
+        <div class="envelope">💌</div>
 
         <h1>Hey You 👀</h1>
 
@@ -27,28 +26,33 @@
             OPEN THIS ❤️
         </button>
 
-    </section>
+    </div>
 
 
     <!-- =========================
          SECOND SCREEN
     ========================== -->
+    <div id="secondScreen" class="screen hidden">
 
-    <section id="secondScreen" class="screen hidden">
+        <!-- Background effects -->
+        <div class="floating-heart heart1">❤️</div>
+        <div class="floating-heart heart2">💖</div>
+        <div class="floating-heart heart3">💕</div>
+        <div class="floating-heart heart4">✨</div>
 
-        <!-- Hand Animation -->
-        <div class="hand">
-            👋
+        <!-- Hand -->
+        <div class="hand-container">
+            <div class="hand">
+                👆
+            </div>
         </div>
 
-        <!-- Stars -->
-        <div class="stars stars1">✨</div>
-        <div class="stars stars2">✨</div>
-        <div class="stars stars3">💖</div>
-
+        <!-- Main content -->
         <div class="content">
 
-            <h2>Hey...</h2>
+            <p class="small-text">
+                HEY...
+            </p>
 
             <h1 id="personName">
                 MOMINA
@@ -58,26 +62,19 @@
                 This little surprise is specially for you 😂❤️
             </p>
 
-            <div class="ghop">
+            <div class="ghop-text">
                 GHOP GHOP 😂
-            </div>
-
-            <!-- MyInstants Gop Gop Music -->
-            <div class="musicBox">
-
-                <iframe
-                    width="110"
-                    height="200"
-                    src="https://www.myinstants.com/instant/gopgopgop-41469/embed/"
-                    frameborder="0"
-                    scrolling="no">
-                </iframe>
-
             </div>
 
         </div>
 
-    </section>
+        <!-- Hidden music -->
+        <audio id="music" loop preload="auto">
+            <source src="ghop-ghop.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+    </div>
 
 
     <script src="script.js"></script>
